@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plan Zajęć</title>
+</head>
+<body>
+<h1>Plan zajęć</h1>
+<table style="border: 1px solid black; border-collapse: collapse;">
+    <tr>
+        <th>Dzień</th>
+        <th>Przedmiot</th>
+        <th>Godziny</th>
+    </tr>
+    {% for item in schedule %}
+    <tr>
+        <td>{{ item.day }}</td>
+        <td>{{ item.subject }}</td>
+        <td>{{ item.time }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'dashboard' %}">Powrót do dashboardu</a>
+
+</body>
+</html>

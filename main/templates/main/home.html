@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Strona Główna{% endblock %}
+
+{% block content %}
+<h1>Witaj na stronie głównej!</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Zaloguj się</button>
+</form>
+
+<a href="{% url 'register' %}">Zarejestruj się</a>
+
+{% endblock %}

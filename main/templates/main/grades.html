@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oceny</title>
+</head>
+<body>
+<h1>Oceny</h1>
+<table style="border: 1px solid black; border-collapse: collapse;">
+    <tr>
+        <th>Przedmiot</th>
+        <th>Ocena</th>
+    </tr>
+    {% for item in grades %}
+    <tr>
+        <td>{{ item.subject }}</td>
+        <td>{{ item.grade }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'dashboard' %}">Powrót do dashboardu</a>
+
+</body>
+</html>
