@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rejestracja</title>
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
 </head>
 <body>
     <h1>Rejestracja</h1>
-
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Zarejestruj się</button>
     </form>
-
+    <a href="{% url 'home' %}">Powrót na stronę główną</a>
 </body>
 </html>

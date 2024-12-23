@@ -3,24 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Plan Zajęć</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
 <h1>Plan zajęć</h1>
-<table style="border: 1px solid black; border-collapse: collapse;">
+<table>
     <tr>
-        <th>Dzień</th>
         <th>Przedmiot</th>
-        <th>Godziny</th>
     </tr>
-    {% for item in schedule %}
+    {% for subject in schedule %}
     <tr>
-        <td>{{ item.day }}</td>
-        <td>{{ item.subject }}</td>
-        <td>{{ item.time }}</td>
+        <td>{{ subject.name }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td>Brak przedmiotów w planie zajęć.</td>
     </tr>
     {% endfor %}
 </table>
 <a href="{% url 'dashboard' %}">Powrót do dashboardu</a>
-
 </body>
 </html>

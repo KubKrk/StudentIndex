@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STATICFILES_DIRS = [BASE_DIR / "main/static"]
 
 AUTH_USER_MODEL = 'main.CustomUser'
 
