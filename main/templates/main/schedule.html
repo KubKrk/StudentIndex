@@ -1,41 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Plan Zajęć</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
+{% extends 'main/base.html' %}
 
-        th, td {
-            border: 1px solid black;
-            text-align: left;
-            padding: 8px;
-        }
+{% block title %}Plan zajęć{% endblock %}
 
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
-<body>
-<h1>Plan zajęć</h1>
-<table>
-    <tr>
-        <th>Przedmiot</th>
-    </tr>
-    {% for subject in schedule %}
-    <tr>
-        <td>{{ subject.name }}</td>
-    </tr>
-    {% empty %}
-    <tr>
-        <td>Brak przedmiotów w planie zajęć.</td>
-    </tr>
-    {% endfor %}
-</table>
-<a href="{% url 'dashboard' %}">Powrót do dashboardu</a>
-</body>
-</html>
+{% block content %}
+    <div class="schedule-container">
+        <h1>Plan zajęć</h1>
+        <table>
+            <tr>
+                <th>Przedmiot</th>
+            </tr>
+            {% for subject in schedule %}
+            <tr>
+                <td>{{ subject.name }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td>Brak przedmiotów w planie zajęć.</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'dashboard' %}" class="back-link">Powrót do dashboardu</a>
+    </div>
+{% endblock %}

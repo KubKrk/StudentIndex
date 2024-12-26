@@ -1,19 +1,13 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rejestracja</title>
-    <link rel="stylesheet" href="{% static 'main/style.css' %}">
-</head>
-<body>
-    <h1>Rejestracja</h1>
+{% extends 'main/base.html' %}
+
+{% block title %}Rejestracja{% endblock %}
+
+{% block content %}
     <form method="post">
+        <h1>Rejestracja</h1>
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Zarejestruj się</button>
+        <a href="{% url 'home' %}" class="back-link">Powrót na stronę główną</a>
     </form>
-    <a href="{% url 'home' %}">Powrót na stronę główną</a>
-</body>
-</html>
+{% endblock %}
